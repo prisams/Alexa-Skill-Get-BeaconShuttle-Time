@@ -1,3 +1,6 @@
 __pycache__/
 .mypy_cache/
 venv/
+*.zip
+run-pylint.sh
+external_libs/

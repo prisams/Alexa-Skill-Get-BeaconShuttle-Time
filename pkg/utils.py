@@ -5,7 +5,7 @@ from typing import List
 
 import pytz
 
-from constant import OUTPUT_STRING
+from pkg.constant import OUTPUT_STRING
 
 def get_current_time() -> int:
     """Returns the current hour and min in number format"""
@@ -20,6 +20,7 @@ def get_day_of_week() -> str:
     return datetime.now(pytz.timezone('US/Eastern')).strftime("%a").lower()
 
 def format_output(output_time: List[int]) -> str:
+    """formats the output"""
 
     if len(output_time) == 1:
         return f'{OUTPUT_STRING}{format_time(output_time[0])}'
@@ -30,14 +31,14 @@ def format_output(output_time: List[int]) -> str:
 
 def format_time(time: int) -> str:
     """Formats the time in am/pm and returns it back"""
-    min = time % 100
+    minute = time % 100
     hour = int(time / 100)
 
     if hour >= 12:
         if hour > 12:
             hour = hour -12
-        response = f'{hour} {min} pm'
+        response = f'{hour} {minute} pm'
     else:
-        response = f'{hour} {min} am'
+        response = f'{hour} {minute} am'
 
     return response

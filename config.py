@@ -1,6 +1,6 @@
-import os
+"""Stores the configuration needed for the application"""
 
-import yaml
+import os
 
 
 #############################################################################
